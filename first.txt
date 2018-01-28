@@ -1,0 +1,27 @@
+struct ListNode *deletem( struct ListNode *head, int m )
+{
+	struct ListNode *L,*p1,*p2;
+	L=head;
+	
+	while(L->next!=NULL&&L->data==m){
+		p1=L->next;
+		free(L);
+		L=p1;
+	}
+	if(L->next==NULL&&L->data==m)
+    return NULL;	
+	p2=L;
+	p1=L->next;	
+	
+	while(p1!=NULL){
+		if(p1->data==m){
+			p2->next=p1->next;
+			free(p1);
+			p1=p2->next;
+			continue;
+		}
+		p2=p1;
+		p1=p1->next;
+	}
+	return L;
+}
