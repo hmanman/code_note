@@ -1,4 +1,14 @@
 ﻿一、getchar吃掉空格的几种方式
 1、前面有scanf（无论多远），后面要接受“字符”时，中间要用getchar（）
 2、2个接受字符ch=getchar（）或者gets时，中间要用getchar（）吃回车。
-http://blog.csdn.net/BBHHTT/article/details/75671653
+http://blog.csdn.net/BBHHTT/article/details/75671653﻿   //倒置
+	link H;
+	link p,q;
+	p=H->next;
+	H->next=NULL;
+	while(p){
+		q=p;
+		p=p->next;
+		q->next=H->next;
+		H->next=q;
+	} 
